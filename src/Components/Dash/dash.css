@@ -1,88 +1,183 @@
 .flex-container{
     display: flex;
-    width: 100%;
-    height: 800px;
+    width: 100vw;
+    height: 100vh;
 }
 
 .profile-box{
-    box-sizing: content-box;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    border: groove;
+    border-color: #53615f;
+    border-width: 10px;
     border-radius: 10px;
-    height: 600px;
+    height: 450px;
     width: 300px;
     background-color: #02AAAA;
     margin: 5%;
+    box-shadow: #000000 0px 15px 25px ;
 }
 
 .pic img {
     box-sizing: content-box;
     border-radius: 10px;
+    border: groove;
+    border-color: #53615f;
+    border-width: 10px;
     height: 200px;
     width: 250px;
-    margin: 25px;
+    margin: 5%;
    
 }
 
-.username {
-    box-sizing: content-box;
-    border-radius: 10px;
-    height: 50px;
-    width: 260px;
-    margin: 20px;
-    background-color: white;
-    text-align: center;
-}
-
-.feed {
-    box-sizing: content-box;
-    border-radius: 10px;
-    height: 100%;
-
-    background-color: #02AAAA;
-    margin: 5%;
-    text-align: center;
-    padding-top: 10px;
-    color: white;
-    font-size: 25px;
-
-    
-}
-
-.feed-list{
+.name p {
     display: flex;
-    flex-wrap: wrap;
-    box-sizing: border-box;
-    width: 450px;
-    height: 200px;
-}
-
-.feed-list img {
-    height: 150px;
-    width: 250px;
-}
-
-.feed-list p1 {
-    height: 30px;
-    width: 100px;
-    background-color: ivory;
+    justify-content: center;
     align-items: center;
+    box-sizing: content-box;
+    border-radius: 10px;
+    margin: 5%;
+    border: groove;
+    border-color: #53615f;
+    border-width: 10px;
+    height: 40px;
+    width: 250px;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    background-color: #37403F;
+   
+    
+  
+   
 
 }
 
-.feed-list p2 {
-    box-sizing: border-box;
+.username p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: content-box;
+    border: groove;
+    border-color: #53615f;
+    border-width: 10px;
+    border-radius: 10px;
     height: 60px;
-    width: 150px;
-    background-color: lawngreen;
+    width: 250px;
+    margin: 5%;
+    font-size: 40px;
+    font-weight: bold;
+    color: darkslategrey;
+    background-color: white;
+  
+  
 }
 
-.post-feed {
-    box-sizing: border-box;
+.feed-container {
     display: flex;
     flex-direction: column;
-   
-   
+    align-items: center;
+    box-sizing: content-box;
+    border: groove;
+    border-color: #53615f;
+    border-width: 10px;
+    border-radius: 10px;
+    height: 100vh;
+    background-color: #02AAAA;
+    margin: 5%;
+    color: white;
+    font-size: 25px;
+    box-shadow: #000000 0px 15px 25px ;
+
     
 }
+
+.post-input {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    box-sizing: content-box;
+    border: groove;
+    border-color: #53615f;
+    border-width: 10px;
+    border-radius: 10px;
+    height: 200px;
+    width: 600px;
+    background-color: #37403F;
+
+}
+
+.mapped-posts {
+    display: flex;
+    
+    
+    margin-top: 5%;
+    padding: 10px;
+    background-color: #37403F;
+    box-sizing: content-box;
+    border: groove;
+    border-color: #53615f;
+    width: 550px;
+    height: 200px;
+}
+
+.mapped-posts img {
+    
+    border: groove;
+    border-color: #53615f;
+    border-width: 10px;
+    border-radius: 10px;
+    height: 150px;
+    float: right;
+    width: 250px;
+    margin: 2%;
+}
+
+.title {
+    display: flex;
+    
+    justify-content: center;
+    align-items: center;
+    box-sizing: content-box;
+    border-radius: 10px;
+    margin: 1%;
+    border: groove;
+    border-color: #53615f;
+    border-width: 10px;
+    height: 40px;
+    width: 250px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #37403F;
+    background-color: white;
+
+}
+
+.content {
+    display: flex;
+    flex-wrap: wrap;
+    
+    justify-content: center;
+    align-items: center;
+    box-sizing: content-box;
+    border-radius: 10px;
+    margin: 5%;
+    border: groove;
+    border-color: #53615f;
+  
+    height: 80px;
+    width: 250px;
+    font-size: 14px;
+    
+    color: #37403F;
+    background-color: white;
+
+}
+
+
+
 
 
 

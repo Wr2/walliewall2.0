@@ -57,33 +57,44 @@ class Dash extends Component {
   
     render(){
         const mappedPost = this.props.uR.w_user.map((post, i) => {
-        return <div className='feed-list' key={i}>
-            <p>{post.title}</p>
-            <p>{post.content}</p>
+        return <div className='mapped-posts' key={i}>
+            <div className='title'>
+                <p>{post.title}</p>
+            </div>
+            <div className='content'>
+                <p>{post.content}</p>
+            </div>
             <img src={post.image} alt='' />
             
             
         </div>
         })
-       console.log(this.props, 'hit1')
-       console.log(this.state.wallpaper, 'hit2')
+     
         return(
             <section className='flex-container'>
              
                 <div className='profile-box'>
                     <div className='pic'>
-                    <img src={this.props.aR.w_user.profile_pic}
-                    alt={this.props.aR.w_user.username}/>
+                        <img src={this.props.aR.w_user.profile_pic}
+                        alt={this.props.aR.w_user.username}/>
+                    </div>
+                    <div className='name'>
+                        <p>
+                            {this.props.aR.w_user.first_name}  {this.props.aR.w_user.last_name}
+                        </p>
                     </div>
                     <div className='username'>
                         <p>{this.props.aR.w_user.username}</p>
-                   
                     </div>
+                   
+                            
+                        
+                   
                 </div>
                
-            <div className='feed'>
+            <div className='feed-container'>
                 <h2>FEED</h2>
-                    
+                <div className='post-input'>
                 <input 
                     value={this.state.title}
                     name='title'
@@ -103,16 +114,14 @@ class Dash extends Component {
                     onChange={this.handleInput}/>
 
                 <button onClick={this.createPost}>Post</button>
-
+                </div>
                 <div className='post-feed'>
                     {mappedPost}
                 </div>
               
             </div>
                 
-                <div className='messages'>
-                 
-                </div>
+                
                 
             </section>
 
