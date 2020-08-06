@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import {getPosts} from '../../Dux/userReducer';
 import axios from 'axios';
 import './dash.css';
-import SimpleImage from '../SimpleImage';
+
 
 
 
@@ -51,13 +51,7 @@ class Dash extends Component {
         .catch(err => console.log(err));
     }
 
-    pushWallpaper = () => {
-        const {id} = this.props.aR.w_user.id
-        axios.put(`/api/wallpaper/${id}`)
-        .then(() => {
-         })
-        .catch(err => console.log(err));
-      }
+  
 
     
   
@@ -117,7 +111,7 @@ class Dash extends Component {
             </div>
                 
                 <div className='messages'>
-                    <SimpleImage />
+                 
                 </div>
                 
             </section>

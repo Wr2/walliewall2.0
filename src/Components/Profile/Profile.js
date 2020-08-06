@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import {connect} from 'react-redux';
 import axios from 'axios';
+import {getUser} from '../../Dux/authReducer'
 import {getPosts} from '../../Dux/userReducer';
 import './profile.css'
 
@@ -10,10 +11,10 @@ class Profile extends Component{
     constructor(props){
         super(props);
         this.state = {
-            first_name: '',
-            last_name: '',
-            username: '',
-            profile_pic: '',
+            first_name: this.props.aR.w_user.first_name,
+            last_name: this.props.aR.w_user.last_name,
+            username: this.props.aR.w_user.username,
+            profile_pic: this.props.aR.w_user.profile_pic,
             editView: false,
             userPosts: [],
             url: ''
@@ -22,24 +23,19 @@ class Profile extends Component{
   
 
     handleInput = (val) => {
-        this.setState({ first_name: val, last_name: val, username: val, profile_pic: val })
+        this.setState({[val.target.name]: val.target.value  })
     }
+
+   
     handleEditView = () => {
         this.setState({editView: !this.state.editView})
     }
     editProfile = () => {
         const {first_name, last_name, username, profile_pic} = this.state;
-        axios.put(`/auth/edit/${this.props.aR.w_user.id}`, 
+        axios.put(`/api/profile/${this.props.aR.w_user.id}`, 
         {first_name, last_name, username, profile_pic})
         .then(res => {
-            this.props.getUser(res.data[0]);
-            this.handleEditView();
-            this.setState({
-                first_name: '',
-                last_name: '',
-                username: '',
-                profile_pic: ''
-            });
+           this.handleEditView();
         })
         .catch(err => console.log(err));
     }
@@ -65,7 +61,8 @@ class Profile extends Component{
 
 
     render(){
-        console.log(this.props)
+        console.log(this.props.aR.w_user)
+      
         const mappedPost = this.props.uR.w_user.map((post, i) => {
             console.log(post)
             return <div className='list' key={post.id}>
@@ -75,13 +72,13 @@ class Profile extends Component{
                 <button onClick={() => this.deletePost(post.id)}>DELETE</button>
             </div>
             })
-       
+        
         return (
             <section className='profile-container' >
                 <div className='profile-box'>
                     <div className='pic'>
                     <img src={this.props.aR.w_user.profile_pic}
-                    alt={this.props.aR.w_user.username}/>
+                    alt='default'/>
                     </div>
                     <div className='bio'>
                         Subway tile crucifix sustainable man braid fanny pack fashion axe whatever bitters kitsch yr kombucha af messenger bag.Lomo selvage single-origin coffee try-hard beard subway tile jianbing crucifix thundercats vape. Lomo plaid humblebrag mumblecore, offal quinoa fixie taxidermy. Gochujang 3 wolf moon heirloom glossier, squid iceland poke yr slow-carb gluten-free hashtag bicycle rights. Humblebrag sriracha af yuccie, kombucha squid hella selvage
@@ -92,39 +89,43 @@ class Profile extends Component{
             <section className='edit-inputs'>
                 {!this.state.editView
                 ? <h2>{this.props.aR.w_user.username} <button id='edit-button' onClick={this.handleEditView}>EDIT PROFILE</button></h2>
-                : (<div><input 
-                    value={this.state.first_name}
-                    placeholder='NEW FIRST NAME'
-                    onChange={(e) => this.handleInput(e.target.value)}/>
-                <button id='edit-button' onClick={this.updateFirst_name}>Submit</button><input 
+                : (<div>
+                   
+                    <input
+                        name='first_name' 
+                        value={this.state.first_name}
+                        placeholder='NEW FIRST NAME'
+                        onChange={(e) => this.handleInput(e)}/>
+               
+                    <input
+                        name='last_name' 
                         value={this.state.last_name}
                         placeholder='NEW LAST NAME'
-                        onChange={(e) => this.handleInput(e.target.value)}/>
-                    <button id='edit-button' onClick={this.updateLast_name}>Submit</button><input 
+                        onChange={(e) => this.handleInput(e)}/>
+               
+                    <input 
+                        name='username'
                         value={this.state.username}
                         placeholder='NEW USERNAME'
-                        onChange={(e) => this.handleInput(e.target.value)}/>
-                    <button id='edit-button' onClick={this.updateUsername}>Submit</button>
-                    <input 
+                        onChange={(e) => this.handleInput(e)}/>
+                    
+                    <input
+                        name='profile_pic' 
                         value={this.state.profile_pic}
                         placeholder='NEW PROFILE PIC'
-                        onChange={(e) => this.handleInput(e.target.value)}/>
-                    <button id='edit-button' onClick={this.updateProfile_pic}>Submit</button>
+                        onChange={(e) => this.handleInput(e)}/>
+                    <button id='edit-button' onClick={this.editProfile}>Submit</button>
+                    
                 </div>)
                 }
             </section>
-                <section className='collections'>
+                <section className='my-posts'>
                     <div>
-                      
-                    </div>
-                    <div>
-                        <h2>My Posts</h2>
+                      <h2>My Posts</h2>
                         {mappedPost}
-                        <button onClick={this.deletePost}>DELETE</button>
-                    </div>
+                    <button onClick={this.deletePost}>DELETE</button>
                     
-                    <div>
-                        <h3>My Collection</h3>
+                    
                     </div>
 
                 </section>
@@ -144,4 +145,7 @@ const mapStateToProps = (reduxState) => {
 }
 
 
-export default connect(mapStateToProps,{getPosts})(Profile);
+export default connect(mapStateToProps,{getUser, getPosts})(Profile);
+                    
+                   
+                  
