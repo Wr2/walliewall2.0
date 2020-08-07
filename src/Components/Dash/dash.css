@@ -48,10 +48,6 @@
     color: white;
     background-color: #37403F;
    
-    
-  
-   
-
 }
 
 .username p {
@@ -70,8 +66,6 @@
     font-weight: bold;
     color: darkslategrey;
     background-color: white;
-  
-  
 }
 
 .feed-container {
@@ -83,7 +77,8 @@
     border-color: #53615f;
     border-width: 10px;
     border-radius: 10px;
-    height: 100vh;
+    height: 1000px;
+    width: 700px;
     background-color: #02AAAA;
     margin: 5%;
     color: white;
@@ -104,40 +99,45 @@
     border-width: 10px;
     border-radius: 10px;
     height: 200px;
-    width: 600px;
+    width: 550px;
     background-color: #37403F;
 
 }
 
 .mapped-posts {
     display: flex;
-    
-    
     margin-top: 5%;
     padding: 10px;
+    border-radius: 10px;
     background-color: #37403F;
     box-sizing: content-box;
     border: groove;
     border-color: #53615f;
     width: 550px;
     height: 200px;
+    box-shadow: #000000 0px 15px 25px ;
+}
+
+.post-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2%;
 }
 
 .mapped-posts img {
-    
+    display: flex;
     border: groove;
     border-color: #53615f;
     border-width: 10px;
     border-radius: 10px;
     height: 150px;
-    float: right;
     width: 250px;
     margin: 2%;
 }
 
 .title {
     display: flex;
-    
     justify-content: center;
     align-items: center;
     box-sizing: content-box;
@@ -158,7 +158,6 @@
 .content {
     display: flex;
     flex-wrap: wrap;
-    
     justify-content: center;
     align-items: center;
     box-sizing: content-box;
@@ -166,11 +165,9 @@
     margin: 5%;
     border: groove;
     border-color: #53615f;
-  
     height: 80px;
     width: 250px;
     font-size: 14px;
-    
     color: #37403F;
     background-color: white;
 

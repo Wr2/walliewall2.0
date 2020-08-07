@@ -58,11 +58,13 @@ class Dash extends Component {
     render(){
         const mappedPost = this.props.uR.w_user.map((post, i) => {
         return <div className='mapped-posts' key={i}>
-            <div className='title'>
-                <p>{post.title}</p>
-            </div>
-            <div className='content'>
-                <p>{post.content}</p>
+            <div className='post-info'>
+                <div className='title'>
+                    <p>{post.title}</p>
+                </div>
+                <div className='content'>
+                    <p>{post.content}</p>
+                </div>
             </div>
             <img src={post.image} alt='' />
             
@@ -93,7 +95,7 @@ class Dash extends Component {
                 </div>
                
             <div className='feed-container'>
-                <h2>FEED</h2>
+                <h2>Show What You Got</h2>
                 <div className='post-input'>
                 <input 
                     value={this.state.title}
