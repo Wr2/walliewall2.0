@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import {connect} from 'react-redux';
+import {getPosts} from '../../Dux/userReducer'
 import axios from 'axios';
 import './search.css'
 
@@ -9,6 +10,7 @@ class Search extends Component{
         super(props);
         this.state = {
             w_user: [],
+            posts:[],
             search: []
         }
     }
@@ -22,6 +24,8 @@ class Search extends Component{
         }).catch(err => console.log(err))
     }
 
+   
+
     handleChange = (e) => {
         this.setState({[e.target.name]: e.target.value})
     }
@@ -30,7 +34,7 @@ class Search extends Component{
 
     searchResults = () => {
         let output = [];
-        output = this.state.w_user.filter((e, i, a) => e.wallpaper === this.state.search)
+        output = this.state.uR.w_user.filter((e, i, a) => e.u === this.state.posts.search)
     }
 
 
@@ -55,29 +59,9 @@ class Search extends Component{
 
                 <section className='catergories-box'>
                     <div className='cater-box'> 
-                        catergorie
+                        user posts
                     </div>
-                    <div className='cater-box'> 
-                        catergorie
-                    </div>
-                    <div className='cater-box'> 
-                        catergorie
-                    </div>
-                    <div className='cater-box'> 
-                        catergorie
-                    </div>
-                    <div className='cater-box'> 
-                        catergorie
-                    </div>
-                    <div className='cater-box'> 
-                        catergorie
-                    </div>
-                    <div className='cater-box'> 
-                        catergorie
-                    </div>
-                    <div className='cater-box'> 
-                        catergorie
-                    </div>
+                
                 </section>
             </div>
         )
@@ -89,4 +73,4 @@ const mapStateToProps = (reduxState) => {
         uR: reduxState.userReducer  
     }
 }
-export default connect(mapStateToProps)(Search);
+export default connect(mapStateToProps, {getPosts})(Search);

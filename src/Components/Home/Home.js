@@ -43,9 +43,12 @@ class Home extends Component{
 
     render(){
         return(
-            <div>
-                <Nav />
+        <div>
+            <Nav />
+            <div className='home-view'>
+            
                 <div className='l-block'>
+                    
                 <input 
                     value={this.state.email}
                     name='email'
@@ -67,6 +70,7 @@ class Home extends Component{
                     <MyCarousel />
                 </div>
             </div>
+        </div>
         )
     }
 }

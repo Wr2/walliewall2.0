@@ -1,5 +1,5 @@
 
-Nav {
+.desktop-menu{
     margin-top: 30px;
     font-family: 'Hind Madurai', sans-serif;
     font-weight: bold;
@@ -38,3 +38,40 @@ li a:hover {
     margin-left: 50px;
     
 }
+
+.dropdown {
+    display: none;
+  }
+  
+  .mobile-menu {
+    display: none;
+  }
+
+@media(max-width: 768px){
+    .Logo {
+      height: 30px;
+    }
+  
+    .desktop-menu {
+      display: none;
+    }
+  
+    .dropdown {
+      display: initial;
+      font-size: 25px;
+      cursor: pointer;
+    }
+  
+    .mobile-menu {
+      display: initial;
+      height: 250px;
+      width: 250px;
+      background: white;
+      position: fixed;
+      top: 125px;
+      right: 0px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+    }
+  }

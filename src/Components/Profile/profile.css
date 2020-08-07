@@ -1,30 +1,185 @@
 .profile-container {
     display: flex;
+    flex-direction: row;
+    
+    width: 100vw;
+    height: 100vh;
 }
 
-.edit-inputs{
-    display: flexbox;
-    height: 600px;
+
+.my-profile-box{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    border: groove;
+    border-color: #53615f;
+    border-width: 10px;
+    border-radius: 10px;
+    height: 450px;
     width: 300px;
-    margin-top: 35px;
+    background-color: #02AAAA;
+    margin: 5%;
+    box-shadow: #000000 0px 15px 25px ;
+}
+
+.pic img {
+    box-sizing: content-box;
+    border-radius: 10px;
+    border: groove;
+    border-color: #53615f;
+    border-width: 10px;
+    height: 200px;
+    width: 250px;
+    margin: 5%;
+}
+
+.my-name p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: content-box;
+    border-radius: 10px;
+    margin: 5%;
+    border: groove;
+    border-color: #53615f;
+    border-width: 10px;
+    height: 40px;
+    width: 250px;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    background-color: #37403F;   
+}
+
+.my-username p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: content-box;
+    border: groove;
+    border-color: #53615f;
+    border-width: 10px;
+    border-radius: 10px;
+    height: 60px;
+    width: 250px;
+    margin: 5%;
+    font-size: 40px;
+    font-weight: bold;
+    color: darkslategrey;
+    background-color: white;
+}
+
+.edit-inputs edit-button {
+    display: flex;
     flex-direction: column;
 }
 
-.collections {
+.my-mapped-post {
     display: flex;
-    flex-wrap: wrap;
-    height: 600px;
-    width: 600px;
-    margin: 35px;
-    
+    margin-top: 5%;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #37403F;
+    box-sizing: content-box;
+    border: groove;
+    border-color: #53615f;
+    width: 550px;
+    height: 260px;
+    box-shadow: #000000 0px 15px 25px ;
 }
 
-.collections > div {
-    background-color: white;
-    text-align: center;
-    margin: 35px;
+.my-posts{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: content-box;
+    border: groove;
+    border-color: #53615f;
+    border-width: 10px;
+    border-radius: 10px;
+    height: 1000px;
+    width: 700px;
+    background-color: #02AAAA;
+    margin: 5%;
+    color: white;
+    font-size: 25px;
+    box-shadow: #000000 0px 15px 25px ;    
+}
+
+
+
+
+
+.my-post-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2%;
+}
+
+.my-pic img {
+    display: flex;
+    border: groove;
+    border-color: #53615f;
+    border-width: 10px;
+    border-radius: 10px;
     height: 200px;
-    width: 200px;
-    border-radius: 20px;
+    width: 250px;
+    margin: 5%;
+}
+
+.pic-button img {
+    display: flex;
+    flex-wrap: wrap;
+    border: groove;
+    border-color: #53615f;
+    border-width: 10px;
+    border-radius: 10px;
+    height: 150px;
+    width: 250px;
+    margin: 2%;
+}
+
+.pic-button button{
+    display: flex;
     justify-content: center;
+}
+
+
+
+.my-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: content-box;
+    border-radius: 10px;
+    margin: 1%;
+    border: groove;
+    border-color: #53615f;
+    border-width: 10px;
+    height: 40px;
+    width: 250px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #37403F;
+    background-color: white;
+
+}
+
+.my-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    box-sizing: content-box;
+    border-radius: 10px;
+    margin: 5%;
+    border: groove;
+    border-color: #53615f;
+    height: 80px;
+    width: 250px;
+    font-size: 14px;
+    color: #37403F;
+    background-color: white;
+
 }

@@ -11,9 +11,15 @@ class Nav extends Component {
     constructor(props){
         super(props);
             this.state = {
-                w_user: []
+                w_user: [],
+                dropdownView: false
+
             }
         }
+
+        toggleDropdown = () => {
+            this.setState({dropdownView: !this.state.dropdownView})
+          }
 
         componentDidMount(){
             this.logMeIn()
@@ -41,7 +47,7 @@ render(){
         return (
             <div className='Nav'>
                 
-                <nav>
+                <nav className='desktop-menu'>
                     <ul>
                        <li>
                        {this.props.aR.w_user.id ?<Link to='/'
@@ -65,6 +71,35 @@ render(){
                         </div>
                     </ul>
                 </nav>
+                <div className='dropdown' onClick={this.toggleDropdown}>///</div>
+          {this.state.dropdownView
+            ? (
+              <nav className='mobile-menu'>
+                 <ul>
+                       <li>
+                       {this.props.aR.w_user.id ?<Link to='/'
+                             onClick={this.handleLogout} >Logout</Link> : null}
+                        </li>
+                        <li>
+                            <Link to='/Contact'>Contact</Link>
+                        </li>
+                        
+                        <li>
+                        {this.props.aR.w_user.id ? <Link to='/Search'>Search</Link>  : null}
+                        </li>
+                        <li>
+                        {this.props.aR.w_user.id ? <Link to='/profile'>Profile</Link> : null}
+                        </li>
+                        <li>
+                        {this.props.aR.w_user.id ? <Link to='/Dash'>Dash</Link> : <Link to='/'>Home</Link>}
+                        </li>
+                        <div className='logo'>
+                            <img src={Logo} alt="Logo" />
+                        </div>
+                    </ul>
+              </nav>
+            )
+            : null}
             </div> 
         ) 
     }

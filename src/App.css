@@ -1,8 +1,11 @@
 body{
+  width: 100%;
   background-color: #37403F;
 }
 
 .App {
   font-family: 'Antic', sans-serif;
   
+  margin: 0;
+  padding: 0;
 }

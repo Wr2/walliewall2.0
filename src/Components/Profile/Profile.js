@@ -21,6 +21,21 @@ class Profile extends Component{
         }
     }
   
+    componentDidUpdate(prevProps, prevState){
+            if(prevProps !== this.props.aR.w_user){
+               getUser()
+            }
+    }
+
+    componentDidUpdate(prevProps,prevState){
+        if(prevProps.userPosts !== this.state.userPosts){
+          this.getUserPosts()
+        }
+}
+
+
+
+   
 
     handleInput = (val) => {
         this.setState({[val.target.name]: val.target.value  })
@@ -42,14 +57,14 @@ class Profile extends Component{
 
     getUserPosts = () => {
         const {id} = this.props.aR.w_user.id
-        console.log(this.props, id)
+        
         axios.get(`/api/post/${id}`)
         .then(res => this.setState({userPosts: res.data}))
         .catch(err => console.log(err));
     }
 
     deletePost = (id) => {
-        console.log(id)
+        
         axios.delete(`/api/post/${id}`)
         .then(() => {this.props.getPosts()})
         .catch(err => console.log(err))
@@ -65,30 +80,46 @@ class Profile extends Component{
       
         const mappedPost = this.props.uR.w_user.map((post, i) => {
             console.log(post)
-            return <div className='list' key={post.id}>
-                <p>{post.title}</p>
-                <img src={post.image} alt='post' />
-                <p>{post.content}</p>
-                <button onClick={() => this.deletePost(post.id)}>DELETE</button>
+            return <div className='my-mapped-post' key={post.id}>
+                <div className='my-post-info'>
+                    <div className='my-title'>
+                        <p>{post.title}</p>
+                    </div>
+                    <div className='my-content'>
+                        <p>{post.content}</p>
+                    </div>
+                </div>
+                <div className='pic-button'>    
+                    <img src={post.image} alt='post' />
+                    <button onClick={() => this.deletePost(post.id)}>DELETE</button>
+                </div>
             </div>
             })
         
         return (
+            
             <section className='profile-container' >
-                <div className='profile-box'>
-                    <div className='pic'>
+                <div className='my-profile-box'>
+                    <div className='my-pic'>
                     <img src={this.props.aR.w_user.profile_pic}
                     alt='default'/>
                     </div>
-                    <div className='bio'>
-                        Subway tile crucifix sustainable man braid fanny pack fashion axe whatever bitters kitsch yr kombucha af messenger bag.Lomo selvage single-origin coffee try-hard beard subway tile jianbing crucifix thundercats vape. Lomo plaid humblebrag mumblecore, offal quinoa fixie taxidermy. Gochujang 3 wolf moon heirloom glossier, squid iceland poke yr slow-carb gluten-free hashtag bicycle rights. Humblebrag sriracha af yuccie, kombucha squid hella selvage
+                    <div className='my-name'>
+                        <p>
+                            {this.props.aR.w_user.first_name}  {this.props.aR.w_user.last_name}
+                        </p>
+                     
                     </div>
+                    <div className='my-username'>
+                        <p>{this.props.aR.w_user.username}</p>
+                    </div>
+                    
                 </div>
             
             
             <section className='edit-inputs'>
                 {!this.state.editView
-                ? <h2>{this.props.aR.w_user.username} <button id='edit-button' onClick={this.handleEditView}>EDIT PROFILE</button></h2>
+                ? <h2> <button id='edit-button' onClick={this.handleEditView}>EDIT PROFILE</button></h2>
                 : (<div>
                    
                     <input
@@ -123,7 +154,7 @@ class Profile extends Component{
                     <div>
                       <h2>My Posts</h2>
                         {mappedPost}
-                    <button onClick={this.deletePost}>DELETE</button>
+                    
                     
                     
                     </div>
@@ -137,12 +168,12 @@ class Profile extends Component{
 
 }
 
-const mapStateToProps = (reduxState) => {
+    const mapStateToProps = (reduxState) => {
     return{
         aR: reduxState.authReducer,
         uR: reduxState.userReducer  
+        }
     }
-}
 
 
 export default connect(mapStateToProps,{getUser, getPosts})(Profile);

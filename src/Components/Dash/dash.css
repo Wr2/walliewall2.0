@@ -46,8 +46,7 @@
     font-size: 20px;
     font-weight: bold;
     color: white;
-    background-color: #37403F;
-   
+    background-color: #37403F;   
 }
 
 .username p {
@@ -83,9 +82,7 @@
     margin: 5%;
     color: white;
     font-size: 25px;
-    box-shadow: #000000 0px 15px 25px ;
-
-    
+    box-shadow: #000000 0px 15px 25px ;    
 }
 
 .post-input {
@@ -101,6 +98,7 @@
     height: 200px;
     width: 550px;
     background-color: #37403F;
+    box-shadow: #000000 0px 15px 25px ;
 
 }
 

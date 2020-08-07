@@ -1,20 +1,26 @@
-
+.home-view {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-content: center;
+   
+}
 .l-block{
-    margin-top: 12%;
+
     box-sizing: content-box;
     width: 150px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    float: right;
-    padding-right: 20%;
+    
+    
 }
 
 input {
     height: 25px;
     width: 200px;
     border-radius: 10px;
-    margin: 20px 20px 5px;
+    margin: 20px 35px 10px;
     border-color: #02AAAA;
     border-width: 10px;
     text-align: center;
@@ -26,9 +32,10 @@ input {
 
 button {
     height: 50px;
-    width: 230px;
+    width: 200px;
     border-radius: 10px;
-    margin: 20px;
+    margin-bottom: 100px;
+    margin-left: 50px;
     font-size: 30px;
     color: white;
     background-color: #02AAAA;
@@ -50,4 +57,15 @@ button {
     box-shadow: #1F2423 0px 10px 10px;
     
 
+}
+
+.l-block{
+    margin-top: 12%;
+    box-sizing: content-box;
+    width: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    float: right;
+    padding-right: 20%;
 }
