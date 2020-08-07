@@ -1,6 +1,6 @@
 .profile-container {
     display: flex;
-    flex-direction: row;
+    /* flex-direction: row; */
     
     width: 100vw;
     height: 100vh;
@@ -69,9 +69,23 @@
     background-color: white;
 }
 
-.edit-inputs edit-button {
+#edit-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 80px;
+    box-shadow: #000000 0px 15px 25px ;
+    
+}
+
+.edit-profile-inputs {
     display: flex;
     flex-direction: column;
+    margin-top: 100px;
+    box-sizing: content-box;
+    border: groove;
+    border-color: #53615f;
+    box-shadow: #000000 0px 15px 25px ;
 }
 
 .my-mapped-post {

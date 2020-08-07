@@ -1,4 +1,7 @@
 
+
+
+
 .desktop-menu{
     margin-top: 30px;
     font-family: 'Hind Madurai', sans-serif;
@@ -22,20 +25,22 @@ li {
 
 li a {
     display: flex;
-    height: 75px;
+    height: 100px;
     color: white;
     text-align: center;
     align-items: center;
     padding: 14px 16px;
     text-decoration: none;
+    margin-right: 20px;
 }
 
 li a:hover {
     background-color: #1e8f8f;
 }
 
-.logo {
+.logo img {
     margin-left: 50px;
+    height: 115px;
     
 }
 
@@ -48,7 +53,7 @@ li a:hover {
   }
 
 @media(max-width: 768px){
-    .Logo {
+    .logo img {
       height: 30px;
     }
   

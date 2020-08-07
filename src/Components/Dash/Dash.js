@@ -115,7 +115,7 @@ class Dash extends Component {
                     placeholder='Add Content'
                     onChange={this.handleInput}/>
 
-                <button onClick={this.createPost}>Post</button>
+                <button className='post-btn' onClick={this.createPost}>Post</button>
                 </div>
                 <div className='post-feed'>
                     {mappedPost}

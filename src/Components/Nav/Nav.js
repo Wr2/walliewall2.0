@@ -46,7 +46,7 @@ render(){
     console.log(this.props)
         return (
             <div className='Nav'>
-                
+               <header className='main-header'>
                 <nav className='desktop-menu'>
                     <ul>
                        <li>
@@ -100,6 +100,7 @@ render(){
               </nav>
             )
             : null}
+            </header>
             </div> 
         ) 
     }

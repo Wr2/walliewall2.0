@@ -1,2 +1,2 @@
 select * from w_user 
-where id = $1;
+where id = ${id};

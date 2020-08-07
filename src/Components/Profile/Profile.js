@@ -117,10 +117,10 @@ class Profile extends Component{
                 </div>
             
             
-            <section className='edit-inputs'>
+            <section >
                 {!this.state.editView
                 ? <h2> <button id='edit-button' onClick={this.handleEditView}>EDIT PROFILE</button></h2>
-                : (<div>
+                : (<div className='edit-profile-inputs'>
                    
                     <input
                         name='first_name' 

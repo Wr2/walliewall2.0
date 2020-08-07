@@ -89,17 +89,23 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    align-items: center;
+    align-content: center;
     box-sizing: content-box;
     border: groove;
     border-color: #53615f;
     border-width: 10px;
     border-radius: 10px;
     height: 200px;
-    width: 550px;
+    width: 600px;
     background-color: #37403F;
     box-shadow: #000000 0px 15px 25px ;
 
+}
+
+.post-btn {
+    margin: 20px;
+    margin-left: 30px;
+    margin-right: 30px;
 }
 
 .mapped-posts {

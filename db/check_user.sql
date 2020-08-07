@@ -1,2 +1,2 @@
 select * from w_user
-where email = $1;
+where email = ${email};

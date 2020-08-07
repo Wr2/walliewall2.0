@@ -3,18 +3,8 @@
     flex-direction: row-reverse;
     justify-content: center;
     align-content: center;
-   
 }
-.l-block{
 
-    box-sizing: content-box;
-    width: 150px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    
-    
-}
 
 input {
     height: 25px;
@@ -26,25 +16,27 @@ input {
     text-align: center;
     font-weight: bold;
     font-size: 20px;
-   
 
 }
 
 button {
     height: 50px;
-    width: 200px;
+    width: 230px;
     border-radius: 10px;
     margin-bottom: 100px;
-    margin-left: 50px;
+    margin-left: 35px;
     font-size: 30px;
     color: white;
     background-color: #02AAAA;
     
-
 }
 
 .sneek-peek {
     box-sizing: content-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     height: 500px;
     width: 950px;
     background-color: #02AAAA;

@@ -2,10 +2,10 @@ insert into w_user (
     first_name,
     last_name,
     username, 
-    email,
     password,
+    email,
     profile_pic
-    )VALUES(
+    )values(
     $1,
     $2,
     $3,
@@ -13,4 +13,4 @@ insert into w_user (
     $5,
     $6  
 )
-RETURNING *;
+returning username, email;
