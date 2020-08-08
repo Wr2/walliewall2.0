@@ -15,9 +15,9 @@ module.exports = {
     createPost: async (req, res) => {
         const db = req.app.get('db'),
             { author_id } = req.params,
-            { title, image, content } = req.body
+            { title,  content, image, } = req.body
 
-        posted = await db.create_post( title, image, content, +author_id );
+        posted = await db.create_post( title,  content, image, +author_id );
         if (!posted[0]) {
             return res.status(200).send(posted)
         }
@@ -52,7 +52,7 @@ module.exports = {
     deletePost: async (req, res) => {
         const db = req.app.get('db');
         const { id } = req.params 
-        await db.delete_post(+id)
+        removePost = await db.delete_post(id)
         return res.status(200).send(removePost)
     },
 

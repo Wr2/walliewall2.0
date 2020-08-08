@@ -1,6 +1,6 @@
 update w_user
-set first_name = ${first_name},
-last_name = ${last_name},
-username = ${username},
-profile_pic = ${profile_pic}
+set first_name = $1,
+last_name = $2,
+username = $3,
+profile_pic = $4
 where id = ${id}

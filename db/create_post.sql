@@ -4,8 +4,8 @@ content,
 image,
 author_id
 ) values (
-    ${title},
-    ${content},
-    ${image},
-    ${author_id}
+    $1,
+    $2,
+    $3,
+    $4
 );

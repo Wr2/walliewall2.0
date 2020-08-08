@@ -33,6 +33,8 @@ button {
 
 .sneek-peek {
     box-sizing: content-box;
+    border: groove;
+    border-color: #53615f;
     display: flex;
     flex-direction: column;
     justify-content: center;
