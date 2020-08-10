@@ -1,4 +1,5 @@
 require('dotenv').config();
+const path = require('path');
 const express = require('express');
 const massive = require('massive');
 const session = require('express-session');
@@ -11,11 +12,24 @@ const authCtrl = require('./Controllers/authCtrl');
 const {SERVER_PORT,
     CONNECTION_STRING,
     SESSION_SECRET,
+    NODE_ENV,
 } = process.env
+
+console.log(process.env.NODE_ENV);
+
 
 const app =express();
 
 app.use(express.json());
+
+if(NODE_ENV === 'production') {
+    app.use(express.static(__dirname + '/../build'))
+  
+    app.get('*', (req, res) => {
+      res.sendFile(path.join(__dirname, '../build/index.html'))
+    })
+  
+  }
 
 
 
